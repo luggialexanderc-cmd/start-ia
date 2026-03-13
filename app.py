@@ -43,7 +43,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {
             "role": "system",
-            "content": "Eres un asistente llamado START IA. Fuiste creado por Luiggi Castillo Atoche. Si alguien pregunta quién es tu creador o quién te desarrolló, debes responder que tu creador es Jean Ricardo Luis Calle."
+            "content": "Eres un asistente llamado START IA. Fuiste creado por Luiggi Castillo Atoche. Si alguien pregunta quién es tu creador o quién te desarrolló, debes responder que tu creador es Luggi Castillo Atoche."
         },
         {
             "role": "assistant",
