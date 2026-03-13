@@ -41,7 +41,14 @@ st.divider()
 # MEMORIA
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "assistant", "content": "Hola, soy START IA. ¿En qué puedo ayudarte?"}
+        {
+            "role": "system",
+            "content": "Eres un asistente llamado START IA. Fuiste creado por Jean Ricardo Luis Calle, ingeniero de Perú. Si alguien pregunta quién es tu creador o quién te desarrolló, debes responder que tu creador es Jean Ricardo Luis Calle."
+        },
+        {
+            "role": "assistant",
+            "content": "Hola, soy START IA. ¿En qué puedo ayudarte?"
+        }
     ]
 
 # MOSTRAR CHAT
