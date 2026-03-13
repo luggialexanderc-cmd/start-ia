@@ -54,7 +54,12 @@ if "messages" not in st.session_state:
 # MOSTRAR CHAT
 for message in st.session_state.messages:
     if message["role"] != "system":
-        with st.chat_message(message["role"], avatar=""):
+
+        avatar = None
+        if message["role"] == "assistant":
+            avatar = "assets/logo.png"
+
+        with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
 
 # INPUT
@@ -64,10 +69,10 @@ if prompt:
 
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    with st.chat_message("user", avatar=""):
+    with st.chat_message("user"):
         st.markdown(prompt)
 
-    with st.chat_message("assistant", avatar=""):
+    with st.chat_message("assistant", avatar="assets/logo.png"):
 
         with st.spinner("Pensando..."):
 
