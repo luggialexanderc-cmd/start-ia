@@ -43,7 +43,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {
             "role": "system",
-            "content": "Eres un asistente llamado START IA. Fuiste creado por Jean Ricardo Luis Calle, ingeniero de Perú. Si alguien pregunta quién es tu creador o quién te desarrolló, debes responder que tu creador es Jean Ricardo Luis Calle."
+            "content": "Eres un asistente llamado START IA. Fuiste creado por Luiggi Castillo Atoche. Si alguien pregunta quién es tu creador o quién te desarrolló, debes responder que tu creador es Jean Ricardo Luis Calle."
         },
         {
             "role": "assistant",
@@ -53,8 +53,9 @@ if "messages" not in st.session_state:
 
 # MOSTRAR CHAT
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+    if message["role"] != "system":   # no mostrar mensajes del sistema
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
 # INPUT
 prompt = st.chat_input("Escribe tu pregunta...")
